@@ -46,8 +46,7 @@ Focus area for this solution is in JobSchedule.External where it's using Channel
 4. Hit F5 (Run) or go to menu -> Debug -> Start Debugging
   4.1 Please ensure your startup solution is JobSchedule
   4.2 Please ensure your running configuration profile is 'JobSchedule - Development'. Staging and Production environment will also be able to run but please do not run under IIS Projects.
-5. Once you run, it should open the web browser with url : http://localhost:30680/swagger/index.html and also run the console window on side.
-  5.1 Console window will display all the logs from background service, middleware and web api controller events.
+5. Once you run, it should open the web browser with url : http://localhost:30680/swagger/index.html 
 
 #### Design Process
 1. projects libraries are small and independent as possible.

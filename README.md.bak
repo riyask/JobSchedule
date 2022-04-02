@@ -50,8 +50,8 @@ Focus area for this solution is in JobSchedule.External where it's using Channel
   5.1 Console window will display all the logs from background service, middleware and web api controller events.
 
 #### Design Process
-1. Keeping projects as small and independent as possible.
+1. projects libraries are small and independent as possible.
 2. Keeping reusable code to be developed using class library so later on we can push them into artifactory as nuget packages and consume directly from nuget packages instead of referencing in project dependency manually.
 3. Using Industry best practices to keep the seperation of concerns.
-4. Web Api service is running Background Service but maybe it can be exctracted outside to run as Worker Service.
+4. Web Api service is running Background Service.
 5. Unit testing and integration testings are done by XUnit and Moq
