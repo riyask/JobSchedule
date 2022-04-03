@@ -7,7 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Formatting.Elasticsearch;
-using StarterKit.Logging;
 using System.Text.Json.Serialization;
 
 namespace JobSchedule.API
@@ -46,7 +45,8 @@ namespace JobSchedule.API
                         .WriteTo.Console(new ElasticsearchJsonFormatter())
                         .Enrich.FromLogContext()
                         .CreateLogger();
-            services.AddLoggingMiddleware(logger);
+            services.AddSwaggerGen();
+            services.AddSingleton<ILogger>(Log.Logger);
 
             services.AddHostedService<SortingService>();
 
@@ -82,10 +82,16 @@ namespace JobSchedule.API
 
             app.UseAuthorization();
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

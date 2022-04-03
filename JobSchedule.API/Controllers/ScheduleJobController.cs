@@ -38,10 +38,6 @@ namespace JobSchedule.API.Controllers
         /// <returns></returns>
         [HttpGet]
         [Produces("application/json")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IEnumerable<JobItem> GetAllScheduledJob()
         {
             LogInfo(LogEventMap.WebApi_ScheduledJob_AllJobStatus, null, "Retreiving all jobs metadata.");
@@ -55,10 +51,6 @@ namespace JobSchedule.API.Controllers
         /// <returns></returns>
         [HttpGet("{id}")]
         [Produces("application/json")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public JobItem GetScheduledJobById(string id)
         {
 
@@ -90,12 +82,7 @@ namespace JobSchedule.API.Controllers
         /// JobItem
         /// </returns>
         [HttpPost]
-        //      [Route("numbers")]
         [Produces("application/json")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public string AddScheduledJob(int[] items)
         {
             var jobItem = new JobItem(items);

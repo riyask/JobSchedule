@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Hosting;
 using JobSchedule.API;
-using StarterKit;
 using System;
 using System.Net.Http;
 
@@ -25,7 +24,7 @@ namespace Maersk.StarterKit.IntegrationTests
                 {
                     webBuilder.UseTestServer();
                     webBuilder.UseStartup<Startup>();
-                }).UseStarterKit().Build();
+                }).Build();
             HostServer.Start();
             Client = HostServer.GetTestClient();
         }

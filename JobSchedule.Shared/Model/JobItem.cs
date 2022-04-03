@@ -72,6 +72,7 @@ namespace JobSchedule.Shared.Model
             Status = jobItem.Status;
             EnqueuedUtcTimeStamp = jobItem?.EnqueuedUtcTimeStamp;
             CompletedUtcTimeStamp = jobItem?.EnqueuedUtcTimeStamp;
+            Items = jobItem.Items;
         }
 
 
